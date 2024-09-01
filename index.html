@@ -12,7 +12,37 @@
           font-style: normal;
           src: url("../static/font/home_v2/Objectivity_Regular.woff2");
         }
-
+        .scroll_container:hover .scroll_child_1 {
+          animation-play-state: paused;
+        }
+        .scroll_container:hover .scroll_child_2 {
+          animation-play-state: paused;
+        }
+        .scroll_child_1 {
+          animation: horizontal_scroll infinite linear;
+          animation-duration: 20s;
+        }
+        @keyframes horizontal_scroll {
+          from {
+            transform: translateX(100%);
+          }
+          to {
+            transform: translateX(-100%);
+          }
+        }
+        .scroll_child_2 {
+          animation: horizontal_scroll2 infinite linear;
+          animation-duration: 20s;
+          animation-delay: -10s;
+        }
+        @keyframes horizontal_scroll2 {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-200%);
+          }
+        }
         .loader {
           width: 30px;
           aspect-ratio: 1;
@@ -152,7 +182,7 @@
   </head>
   <body>
     <section>
-      <div class="flex justify-between px-4">
+      <div class="flex justify-between px-4 py-2">
         <div>
           <div class="flex items-center">
             netoprice
@@ -288,7 +318,7 @@
         <div class="mx-auto max-w-[1100px] px-5 pb-48 text-white">
           <div
             id="pic1"
-            class="relative z-[4] my-4 rounded-xl bg-[#8080804d] backdrop-blur-xl transition-all"
+            class="relative z-[4] my-4 overflow-hidden rounded-xl bg-[#8080804d] backdrop-blur-xl transition-all"
             style="transform: translateY(-1%)"
           >
             <div class="md:flex md:items-center">
@@ -307,7 +337,7 @@
           </div>
           <div
             id="pic2"
-            class="relative z-[3] my-4 rounded-xl bg-[#8080804d] backdrop-blur-xl transition-all"
+            class="relative z-[3] my-4 overflow-hidden rounded-xl bg-[#8080804d] backdrop-blur-xl transition-all"
             style="transform: translateY(-1%)"
           >
             <div class="md:flex md:items-center">
@@ -326,7 +356,7 @@
           </div>
           <div
             id="pic3"
-            class="relative z-[2] my-4 rounded-xl bg-[#8080804d] backdrop-blur-xl transition-all"
+            class="relative z-[2] my-4 overflow-hidden rounded-xl bg-[#8080804d] backdrop-blur-xl transition-all"
             style="transform: translateY(-1%)"
           >
             <div class="md:flex md:items-center">
@@ -345,7 +375,7 @@
           </div>
           <div
             id="pic4"
-            class="relative z-[1] my-4 rounded-xl bg-[#8080804d] backdrop-blur-xl transition-all"
+            class="relative z-[1] my-4 overflow-hidden rounded-xl bg-[#8080804d] backdrop-blur-xl transition-all"
             style="transform: translateY(-1%)"
           >
             <div class="md:flex md:items-center">
@@ -363,7 +393,9 @@
             </div>
           </div>
         </div>
-        <div class="flex flex-col justify-center pb-10 sm:flex-row">
+        <div
+          class="flex flex-col items-center justify-center pb-10 sm:flex-row"
+        >
           <button
             class="my-auto w-max rounded-3xl bg-white px-6 py-2 text-lg font-bold text-black transition-all hover:scale-95"
           >
@@ -377,40 +409,47 @@
           </button>
         </div>
         <script>
-          function visibilityPercentage(pic) {
-            var windowHeight = window.visualViewport.height;
-            var pic_rect = pic.getBoundingClientRect().bottom;
-
-            // if (windowHeight - pic_rect < 0) return 0;
-            if (windowHeight - pic_rect > 2 * windowHeight) return 0;
-            return (windowHeight - pic_rect) / (windowHeight * 2); //TODO andaze yek slide az andaze koll kam beshe yani ===> windowHeight - pic_rect - pic_3 / (windowHeight * 2)
-          }
-          let options = {
-            root: null,
-            rootMargin: "0px",
-            threshold: 0.9,
-          };
-
           window.addEventListener("scroll", (event) => {
-            var scrollValuefromTop = window.pageYOffset;
-            var pic2 = document.getElementById("pic2");
             var pic_container = document.getElementById("pic_container");
+            var botom = pic_container.getBoundingClientRect().top;
+            var pic_container_height = pic_container.clientHeight;
 
-            var vp_pic_container = visibilityPercentage(pic_container);
-            var pic2_vp = visibilityPercentage(pic2);
-            console.log(vp_pic_container);
-            //pic2 70 -- -95 - 0
-            //pic3 97 -- -200 - 0
-            //pic4 66 -- -270 - 0
-            var new_v = 100 - Math.abs(vp_pic_container * 100 - 70) * 100;
-            // pic2.style.transform = "translateY(" + new_v + "%)";
+            var percent = (-430 * botom) / pic_container_height - 80;
+            if (percent < -98) {
+              percent = -98;
+            }
+            if (percent > 0) {
+              percent = 0;
+              pic2.style.scale = "100%";
+            } else {
+              pic2.style.scale = "98%";
+            }
+            pic2.style.transform = "translateY(" + percent + "%)";
+
+            var percent_3 = (-430 * botom) / pic_container_height - 180;
+            if (percent_3 < -200) {
+              percent_3 = -200;
+            }
+            if (percent_3 > 0) {
+              percent_3 = 0;
+              pic3.style.scale = "100%";
+            } else {
+              pic3.style.scale = "95%";
+            }
+            pic3.style.transform = "translateY(" + percent_3 + "%)";
+
+            var percent_4 = (-430 * botom) / pic_container_height - 287;
+            if (percent_4 < -310) {
+              percent_4 = -310;
+            }
+            if (percent_4 > 0) {
+              percent_4 = 0;
+              pic4.style.scale = "100%";
+            } else {
+              pic4.style.scale = "92%";
+            }
+            pic4.style.transform = "translateY(" + percent_4 + "%)";
           });
-          const observer = new IntersectionObserver(callback, options);
-          let target = document.getElementById("pic1");
-          observer.observe(target);
-          function callback() {
-            // alert("asds");
-          }
         </script>
       </div>
     </section>
@@ -494,7 +533,7 @@
     <section>
       <div class="py-10">
         <div class="mx-auto mb-16 w-11/12 text-center md:w-1/2">
-          <h2>A simple way to set it up</h2>
+          <h2 class="pb-5">A simple way to set it up</h2>
           <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum
             eveniet natus voluptatum dignissimos necessitatibus nulla sapiente
@@ -505,7 +544,7 @@
         <div class="items-center px-5 lg:flex lg:px-16">
           <div class="py-8 md:px-10">
             <h2 class="text-[#bababa]">01</h2>
-            <h3>Revolutionize work with VR efficiency</h3>
+            <h3 class="py-4">Revolutionize work with VR efficiency</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur. At molestie amet nunc
               elementum nisl sem eu etiam cras. Dictum quis ipsum a sagittis
@@ -525,7 +564,7 @@
         <div class="items-center px-5 lg:flex lg:px-16">
           <div class="py-8 md:px-10">
             <h2 class="text-[#bababa]">02</h2>
-            <h3>Revolutionize work with VR efficiency</h3>
+            <h3 class="py-4">Revolutionize work with VR efficiency</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur. At molestie amet nunc
               elementum nisl sem eu etiam cras. Dictum quis ipsum a sagittis
@@ -545,7 +584,7 @@
         <div class="items-center px-5 lg:flex lg:px-16">
           <div class="py-8 md:px-10">
             <h2 class="text-[#bababa]">03</h2>
-            <h3>Revolutionize work with VR efficiency</h3>
+            <h3 class="py-4">Revolutionize work with VR efficiency</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur. At molestie amet nunc
               elementum nisl sem eu etiam cras. Dictum quis ipsum a sagittis
@@ -565,7 +604,7 @@
         <div class="items-center px-5 lg:flex lg:px-16">
           <div class="py-8 md:px-10">
             <h2 class="text-[#bababa]">04</h2>
-            <h3>Revolutionize work with VR efficiency</h3>
+            <h3 class="py-4">Revolutionize work with VR efficiency</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur. At molestie amet nunc
               elementum nisl sem eu etiam cras. Dictum quis ipsum a sagittis
@@ -612,9 +651,56 @@
         </div>
       </div>
     </section>
-    <script>
-      $(document).ready(function () {});
-    </script>
+    <section>
+      <div class="scroll_container flex overflow-hidden bg-black py-4">
+        <div class="scroll_child_1 flex-none whitespace-nowrap text-white">
+          <a href="#" class="inline-flex w-max px-2"
+            ><h3>Get Starter today</h3></a
+          >
+          <a href="#" class="inline-flex w-max px-2"
+            ><h3>Get Starter today</h3></a
+          >
+          <a href="#" class="inline-flex w-max px-2"
+            ><h3>Get Starter today</h3></a
+          >
+          <a href="#" class="inline-flex w-max px-2"
+            ><h3>Get Starter today</h3></a
+          >
+          <a href="#" class="inline-flex w-max px-2"
+            ><h3>Get Starter today</h3></a
+          >
+          <a href="#" class="inline-flex w-max px-2"
+            ><h3>Get Starter today</h3></a
+          >
+          <a href="#" class="inline-flex w-max px-2"
+            ><h3>Get Starter today</h3></a
+          >
+        </div>
+        <div class="scroll_child_2 flex-none whitespace-nowrap text-white">
+          <a href="#" class="inline-flex w-max px-2"
+            ><h3>Get Starter today</h3></a
+          >
+          <a href="#" class="inline-flex w-max px-2"
+            ><h3>Get Starter today</h3></a
+          >
+          <a href="#" class="inline-flex w-max px-2"
+            ><h3>Get Starter today</h3></a
+          >
+          <a href="#" class="inline-flex w-max px-2"
+            ><h3>Get Starter today</h3></a
+          >
+          <a href="#" class="inline-flex w-max px-2"
+            ><h3>Get Starter today</h3></a
+          >
+          <a href="#" class="inline-flex w-max px-2"
+            ><h3>Get Starter today</h3></a
+          >
+          <a href="#" class="inline-flex w-max px-2"
+            ><h3>Get Starter today</h3></a
+          >
+        </div>
+      </div>
+    </section>
     <script type="text/javascript" src="static/lib/slick/slick.min.js"></script>
     <script type="text/javascript">
       $(document).ready(function () {
