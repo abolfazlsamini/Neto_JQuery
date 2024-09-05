@@ -147,7 +147,7 @@
           }
         }
         h1 {
-          @apply text-4xl md:text-5xl xl:text-[72px];
+          @apply text-4xl md:text-4xl lg:text-5xl xl:text-[64px] 2xl:text-[72px];
           font-family: "Objectivity_Regular";
           font-weight: 700;
         }
@@ -167,6 +167,19 @@
         p {
           font-size: 18px;
           color: #161616;
+        }
+        .apearanimation {
+          transform: translateY(0);
+          opacity: 1;
+          transition: all;
+          animation: apearaniamtion;
+          animation-duration: 1s;
+        }
+        @keyframes apearaniamtion {
+          from {
+            transform: translateY(10%);
+            opacity: 0;
+          }
         }
       }
     </style>
@@ -198,7 +211,7 @@
           </div>
         </div>
         <button
-          class="my-auto rounded-3xl bg-black px-6 py-2 text-lg font-bold text-white transition-all hover:scale-95"
+          class="my-auto rounded-3xl bg-black px-4 py-2 text-lg font-bold text-white transition-all hover:scale-95 sm:px-6"
         >
           connect wallet
         </button>
@@ -218,7 +231,9 @@
             alt=""
           />
         </picture>
-        <div class="absolute top-20 px-5 text-white md:hidden">
+        <div
+          class="apearanimationobserver absolute top-20 px-5 text-white md:hidden"
+        >
           <h1>
             Our token, a new dawn , toward limitless horizons of power and
             freedom
@@ -231,15 +246,15 @@
           </p>
         </div>
         <div
-          class="absolute left-10 top-20 hidden w-1/2 px-5 text-white md:block xl:left-64"
+          class="apearanimationobserver absolute left-10 top-20 hidden w-1/2 px-5 text-white md:block xl:left-48"
         >
-          <h2>
+          <h1>
             Our token, a new dawn , toward limitless horizons of power and
             freedom
-          </h2>
+          </h1>
         </div>
         <div
-          class="absolute bottom-20 right-10 hidden w-1/3 px-5 text-white md:block xl:right-64"
+          class="apearanimationobserver absolute bottom-20 right-10 hidden w-1/3 px-5 text-white md:block xl:right-48"
         >
           <p class="mt-5 text-white">
             Today, the Neto token, leveraging an innovative and unique
@@ -252,9 +267,11 @@
     </section>
     <section>
       <div class="py-32">
-        <div class="items-center px-5 lg:flex lg:px-16 xl:px-28">
+        <div
+          class="apearanimationobserver items-center px-5 lg:flex lg:px-16 xl:px-28"
+        >
           <div class="px-5 py-8 md:w-1/2">
-            <h2>Get to Know the Neto Token Better</h2>
+            <h2 class="">Get to Know the Neto Token Better</h2>
             <p class="">
               One of the advantages of this gaming token is its consistently
               upward trend, driven by its unique and engaging algorithm,
@@ -342,7 +359,7 @@
     </section>
     <section class="bg-black">
       <div
-        class="mx-auto w-11/12 py-16 text-center text-white md:w-1/2 xl:w-1/3"
+        class="apearanimationobserver mx-auto w-11/12 py-16 text-center text-white md:w-1/2 xl:w-1/3"
       >
         <h2>How to buy NETO?</h2>
         <p class="text-white">
@@ -350,7 +367,7 @@
           acquire this valuable token.
         </p>
       </div>
-      <div id="pic_container" class="bg-black">
+      <div id="pic_container" class="apearanimationobserver bg-black">
         <div class="mx-auto max-w-5xl px-5 pb-10 text-white">
           <div
             id="pic1"
@@ -484,13 +501,13 @@
     </section>
 
     <section class="my-8">
-      <div class="mx-auto px-3 py-10 md:px-10 xl:w-2/3">
+      <div class="apearanimationobserver mx-auto px-3 py-10 md:px-10 xl:w-2/3">
         <h2 class="pb-5 text-center">Get to know the Neto whitepaper</h2>
       </div>
       <div class="relative">
         <div class="flex justify-end px-4 md:block md:p-0">
           <div
-            class="prev left-10 top-1/2 z-20 mr-3 -translate-y-1/2 -rotate-90 cursor-pointer rounded-full bg-white p-2 md:absolute xl:left-48"
+            class="prev left-10 top-1/2 z-20 mr-3 -translate-y-1/2 -rotate-90 cursor-pointer rounded-full bg-white p-2 md:absolute xl:left-32"
           >
             <svg
               id="Collapse_Arrow_24"
@@ -530,7 +547,7 @@
             </svg>
           </div>
           <div
-            class="next right-10 top-1/2 z-20 -translate-y-1/2 rotate-90 cursor-pointer rounded-full bg-white p-2 md:absolute xl:right-48"
+            class="next right-10 top-1/2 z-20 -translate-y-1/2 rotate-90 cursor-pointer rounded-full bg-white p-2 md:absolute xl:right-32"
           >
             <svg
               id="Collapse_Arrow_24"
@@ -589,7 +606,7 @@
                 >
                   <div>
                     <h2>Introducing NETO</h2>
-                    <p class="text-white">
+                    <p class="pt-2 text-white">
                       Neto Gamer company has introduced NETO token on the
                       Polygon platform Contract Address:
                       0xed0c8e710495d45b462338751868f2ed79295a6c exclusively
@@ -626,7 +643,7 @@
                 >
                   <div>
                     <h2>Introducing NETO</h2>
-                    <p class="text-white">
+                    <p class="pt-2 text-white">
                       The liquidity pool of Neto Token is based on Matic, and it
                       does not have the possibility of price reduction. Token
                       holders do not have the ability to withdraw liquidity or
@@ -659,7 +676,7 @@
                 >
                   <div>
                     <h2>Token Purchase and Sale Fees</h2>
-                    <p class="text-white">
+                    <p class="pt-2 text-white">
                       Users buying the token will incur a 2% fee based on Matic,
                       with all of that fee being deposited into the liquidity
                       pool. Similarly, a 2% fee based on Matic will be charged
@@ -690,7 +707,7 @@
                 >
                   <div>
                     <h2>Token Transfer Fees</h2>
-                    <p class="text-white">
+                    <p class="pt-2 text-white">
                       When a user transfers their tokens to another user's
                       account, no new tokens will be minted. The sending user
                       will pay a 2% fee in Neto, and the receiving user will pay
@@ -722,7 +739,7 @@
                 >
                   <div>
                     <h2>Development Team's Online Games</h2>
-                    <p class="text-white">
+                    <p class="pt-2 text-white">
                       In exchange for the received fees, the development team
                       will design online games on the blockchain platform. These
                       games, being designed as smart contracts, offer
@@ -756,7 +773,7 @@
                 >
                   <div>
                     <h2>NFT Marketplace</h2>
-                    <p class="text-white">
+                    <p class="pt-2 text-white">
                       All games in the NetoGamer collection have purchasable
                       NFTs. Users need to use the Neto token for buying and
                       selling these NFTs. Transactions in this section will lead
@@ -773,7 +790,9 @@
     </section>
     <section>
       <div class="py-10">
-        <div class="mx-auto mb-16 w-11/12 text-center md:w-1/2">
+        <div
+          class="apearanimationobserver mx-auto mb-16 w-11/12 text-center md:w-1/2"
+        >
           <h2 class="pb-5">A simple way to be Powerful</h2>
           <p>
             The Neto token today assures its holders that they can easily hold
@@ -806,7 +825,7 @@
           </div>
         </div> -->
       </div>
-      <div class="py-10">
+      <div class="apearanimationobserver py-10">
         <div class="items-center px-5 lg:flex lg:px-16">
           <div class="py-8 md:w-1/2 md:px-0 md:pr-10 xl:px-12">
             <div class="">
@@ -891,7 +910,7 @@
           </div>
         </div>
       </div>
-      <div class="py-10">
+      <div class="apearanimationobserver py-10">
         <div class="items-center px-5 lg:flex lg:px-16">
           <div class="py-8 md:w-1/2 md:px-10">
             <h3 class="py-4">Transactions Fee</h3>
@@ -914,7 +933,7 @@
           </div>
         </div>
       </div>
-      <div class="py-10">
+      <div class="apearanimationobserver py-10">
         <div class="items-center px-5 lg:flex lg:px-16">
           <div class="py-8 md:w-1/2 md:px-10">
             <h3 class="py-4">Games Fee</h3>
@@ -939,7 +958,7 @@
           </div>
         </div>
       </div>
-      <div class="py-10">
+      <div class="apearanimationobserver py-10">
         <div class="items-center px-5 lg:flex lg:px-16">
           <div class="py-8 md:w-1/2 md:px-10">
             <h3 class="py-4">NFT Marketplace Fee</h3>
@@ -961,51 +980,17 @@
         </div>
       </div>
     </section>
-    <section>
-      <div>
-        <div class="relative">
-          <div class="">
-            <picture>
-              <source
-                srcset="static/img/home_v2/sec_4_pic_mobile.png"
-                media="(max-width:767.95px)"
-              />
-              <img
-                src="static/img/home_v2/sec_4_pic_pc.png"
-                alt=""
-                class="h-full object-cover"
-              />
-            </picture>
-          </div>
-          <div
-            class="absolute top-1/2 max-w-lg -translate-y-1/2 px-5 text-center text-white md:right-20 md:w-1/2 md:text-start"
-          >
-            <h3>
-              The Neto decentralized exchange, which is a smart contract,
-              enables instant transactions for you
-            </h3>
-            <p class="py-2 text-white">
-              If you are a gamer or a cryptocurrency enthusiast, this token is
-              designed specifically for you. Gamers can earn this token through
-              gameplay, purchase various bundles and in-game items with it,
-              update items, and sell them, resulting in significant earnings.
-              It's worth noting that the token's price trend is consistently
-              upward, and cryptocurrency enthusiasts can also benefit from
-              capital growth simply by buying and holding the token
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section class="my-8">
       <div class="mx-auto px-3 py-10 md:px-10 xl:w-2/3">
-        <h2 class="pb-5 text-center">Get to know the Neto roadmap</h2>
+        <h2 class="apearanimationobserver pb-5 text-center">
+          Get to know the Neto roadmap
+        </h2>
       </div>
       <div class="relative">
         <div class="flex justify-end px-4 md:block md:p-0">
           <div
-            class="prev2 left-10 top-1/2 z-20 mr-3 -translate-y-1/2 -rotate-90 cursor-pointer rounded-full bg-white p-2 md:absolute xl:left-48"
+            class="prev2 left-10 top-1/2 z-20 mr-3 -translate-y-1/2 -rotate-90 cursor-pointer rounded-full bg-white p-2 md:absolute xl:left-32"
           >
             <svg
               id="Collapse_Arrow_24"
@@ -1045,7 +1030,7 @@
             </svg>
           </div>
           <div
-            class="next2 right-10 top-1/2 z-20 -translate-y-1/2 rotate-90 cursor-pointer rounded-full bg-white p-2 md:absolute xl:right-48"
+            class="next2 right-10 top-1/2 z-20 -translate-y-1/2 rotate-90 cursor-pointer rounded-full bg-white p-2 md:absolute xl:right-32"
           >
             <svg
               id="Collapse_Arrow_24"
@@ -1104,7 +1089,9 @@
                 >
                   <div>
                     <h2>Whitepaper Design</h2>
-                    <p class="text-white">2023 October 7 - 2023 November 14</p>
+                    <p class="pt-2 text-white">
+                      2023 October 7 - 2023 November 14
+                    </p>
                   </div>
                 </div>
               </div>
@@ -1127,7 +1114,7 @@
                 >
                   <div>
                     <h2>Token Launch</h2>
-                    <p class="text-white">2023 November 14</p>
+                    <p class="pt-2 text-white">2023 November 14</p>
                   </div>
                 </div>
               </div>
@@ -1150,7 +1137,7 @@
                 >
                   <div>
                     <h2>Neto Ball</h2>
-                    <p class="text-white">Started: 2023 August 1</p>
+                    <p class="pt-2 text-white">Started: 2023 August 1</p>
                   </div>
                 </div>
               </div>
@@ -1173,11 +1160,47 @@
                 >
                   <div>
                     <h2>NFT Marketplace</h2>
-                    <p class="text-white">2023 October 10 - 2026 May 15</p>
+                    <p class="pt-2 text-white">2023 October 10 - 2026 May 15</p>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div>
+        <div class="relative">
+          <div class="">
+            <picture>
+              <source
+                srcset="static/img/home_v2/sec_4_pic_mobile.png"
+                media="(max-width:767.95px)"
+              />
+              <img
+                src="static/img/home_v2/sec_4_pic_pc.png"
+                alt=""
+                class="h-full object-cover"
+              />
+            </picture>
+          </div>
+          <div
+            class="apearanimationobserver absolute top-1/2 -translate-y-1/2 px-5 text-center text-white md:right-20 md:w-1/2 md:text-start xl:w-1/3"
+          >
+            <h3>
+              The Neto decentralized exchange, which is a smart contract,
+              enables instant transactions for you
+            </h3>
+            <p class="py-2 text-white">
+              If you are a gamer or a cryptocurrency enthusiast, this token is
+              designed specifically for you. Gamers can earn this token through
+              gameplay, purchase various bundles and in-game items with it,
+              update items, and sell them, resulting in significant earnings.
+              It's worth noting that the token's price trend is consistently
+              upward, and cryptocurrency enthusiasts can also benefit from
+              capital growth simply by buying and holding the token
+            </p>
           </div>
         </div>
       </div>
@@ -1251,13 +1274,13 @@
             {
               breakpoint: 1536,
               settings: {
-                centerPadding: "250px",
+                centerPadding: "150px",
               },
             },
             {
               breakpoint: 1280,
               settings: {
-                centerPadding: "100px",
+                centerPadding: "40px",
               },
             },
             {
@@ -1300,13 +1323,13 @@
             {
               breakpoint: 1536,
               settings: {
-                centerPadding: "250px",
+                centerPadding: "150px",
               },
             },
             {
               breakpoint: 1280,
               settings: {
-                centerPadding: "100px",
+                centerPadding: "40px",
               },
             },
             {
@@ -1329,6 +1352,21 @@
             },
           ],
         });
+      });
+    </script>
+    <script type="text/javascript">
+      var apearanimations = document.getElementsByClassName(
+        "apearanimationobserver",
+      );
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("apearanimation");
+          }
+        });
+      });
+      Array.from(apearanimations).forEach((apearanimation) => {
+        observer.observe(apearanimation);
       });
     </script>
   </body>
