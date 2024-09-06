@@ -546,6 +546,31 @@
           />
         </div>
       </div>
+      <script>
+        jiggle_container.addEventListener("mousemove", (event) => {
+          const mouse_x = event.clientX;
+          const mouse_y = event.clientY;
+          //-3 to +3 deg
+          var windows_width = window.innerWidth;
+          var windows_height = window.innerHeight;
+          rotate_z = (mouse_x / windows_width) * 6 - 3;
+          var translate_y = ((mouse_y / windows_height) * 6 - 3) * 5;
+          hover_pic_1.style.transform = `translateY(${-translate_y}px) rotateZ(${rotate_z}deg) translateX(${rotate_z * 20}px)`;
+          hover_pic_2.style.transform = `translateY(${translate_y}px) rotateZ(${-rotate_z}deg) translateX(${rotate_z * 10}px)`;
+          hover_pic_3.style.transform = `translateY(${translate_y}px) rotateZ(${rotate_z}deg) translateX(${rotate_z * 10}px)`;
+          hover_pic_4.style.transform = `translateY(${translate_y}px) rotateZ(${-rotate_z}deg) translateX(${rotate_z * 10}px)`;
+        });
+        jiggle_container.addEventListener("mouseleave", (event) => {
+          hover_pic_1.style.transform =
+            "translateY(0px) translateX(0px) rotateZ(0deg)";
+          hover_pic_2.style.transform =
+            "translateY(0px) translateX(0px) rotateZ(0deg)";
+          hover_pic_3.style.transform =
+            "translateY(0px) translateX(0px) rotateZ(0deg)";
+          hover_pic_4.style.transform =
+            "translateY(0px) translateX(0px) rotateZ(0deg)";
+        });
+      </script>
     </section>
   </body>
 </html>
