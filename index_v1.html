@@ -139,6 +139,22 @@
           font-size: 18px;
           color: #161616;
         }
+        .slide:hover {
+          scale: var(--scalepercent, 97%);
+        }
+        .apearanimation {
+          transform: translateY(0);
+          opacity: 1;
+          transition: all;
+          animation: apearaniamtion;
+          animation-duration: 1s;
+        }
+        @keyframes apearaniamtion {
+          from {
+            transform: translateY(10%);
+            opacity: 0;
+          }
+        }
       }
     </style>
     <script src="static/lib/jquery-3.7.1.js"></script>
@@ -153,23 +169,23 @@
   </head>
   <body>
     <section>
-      <div class="flex justify-between px-4 py-2">
+      <div class="flex justify-between bg-black px-4 py-2">
         <div class="text-lg md:flex">
-          <div class="flex items-center font-bold md:mr-6">
+          <div class="flex items-center font-bold text-white md:mr-6">
             Netoprice
-            <div class="loader mx-2"></div>
+            <div class="loader mx-2 border-white"></div>
           </div>
-          <div class="flex items-center font-bold md:mr-6">
+          <div class="flex items-center font-bold text-white md:mr-6">
             Netoprice
-            <div class="loader mx-2"></div>
+            <div class="loader mx-2 border-white"></div>
           </div>
-          <div class="flex items-center font-bold md:mr-6">
+          <div class="flex items-center font-bold text-white md:mr-6">
             Netoprice
-            <div class="loader mx-2"></div>
+            <div class="loader mx-2 border-white"></div>
           </div>
         </div>
         <button
-          class="my-auto rounded-3xl bg-black px-6 py-2 text-lg font-bold text-white transition-all hover:scale-95"
+          class="my-auto rounded-3xl bg-white px-4 py-2 text-lg font-bold text-black transition-all hover:scale-95 sm:px-6"
         >
           connect wallet
         </button>
@@ -192,14 +208,16 @@
         <div
           class="absolute left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2 px-5 text-center text-white md:w-2/3 xl:w-1/2"
         >
-          <h1>The ultimate productivity app for spatial computing</h1>
-          <p class="my-5 text-white">
+          <h1 class="apearanimationobserver">
+            The ultimate productivity app for spatial computing
+          </h1>
+          <p class="apearanimationobserver my-5 text-white">
             Lorem ipsum dolor sit amet consectetur. In purus etiam quis
             scelerisque arcu. Tristique sed massa nunc sed. Pretium malesuada
             arcu ipsum quam.
           </p>
           <button
-            class="my-auto rounded-3xl bg-white px-6 py-2 text-lg font-bold text-black transition-all hover:scale-95"
+            class="apearanimationobserver my-auto rounded-3xl bg-white px-6 py-2 text-lg font-bold text-black transition-all hover:scale-95"
           >
             Get in touch
           </button>
@@ -208,7 +226,7 @@
     </section>
     <section class="bg-black py-10">
       <div class="mx-auto max-w-7xl">
-        <div class="px-5 py-6 md:flex">
+        <div class="apearanimationobserver px-5 py-6 md:flex">
           <h2 class="pb-5 pr-5 text-white md:w-2/3">
             Take your productivity to the next level
           </h2>
@@ -231,7 +249,7 @@
             <div>
               <div class="h-full p-3">
                 <div
-                  class="h-full cursor-pointer items-center overflow-hidden rounded-3xl border border-white/20 bg-[#8080804d] text-white backdrop-blur-xl transition-all hover:scale-[98%] md:flex"
+                  class="apearanimationobserver h-full cursor-pointer items-center overflow-hidden rounded-3xl border border-white/20 bg-[#8080804d] text-white backdrop-blur-xl transition-all hover:scale-[98%] md:flex"
                 >
                   <div class="px-5 py-5 md:w-1/3">
                     <h3>Tasks & projects</h3>
@@ -251,7 +269,7 @@
             <div class="">
               <div class="h-1/2 p-3">
                 <div
-                  class="relative h-full cursor-pointer rounded-3xl border border-white/20 bg-[#8080804d] pl-8 pt-8 text-white backdrop-blur-xl transition-all hover:scale-[98%]"
+                  class="apearanimationobserver relative h-full cursor-pointer rounded-3xl border border-white/20 bg-[#8080804d] pl-8 pt-8 text-white backdrop-blur-xl transition-all hover:scale-[98%]"
                 >
                   <h3 class="absolute w-1/3 text-xl xl:text-[30px]">
                     manage multiple pages
@@ -265,7 +283,7 @@
               </div>
               <div class="h-1/2 p-3">
                 <div
-                  class="flex h-full cursor-pointer flex-col justify-between overflow-hidden rounded-3xl border border-white/20 bg-[#8080804d] text-white backdrop-blur-xl transition-all hover:scale-[98%]"
+                  class="apearanimationobserver flex h-full cursor-pointer flex-col justify-between overflow-hidden rounded-3xl border border-white/20 bg-[#8080804d] text-white backdrop-blur-xl transition-all hover:scale-[98%]"
                 >
                   <h3 class="px-3 py-5 text-center xl:py-10">
                     Tens of features
@@ -283,7 +301,7 @@
             <div class="md:w-1/3">
               <div class="h-full p-3">
                 <div
-                  class="relative flex h-full cursor-pointer flex-col justify-between overflow-hidden rounded-3xl border border-white/20 bg-[#8080804d] pt-8 text-white backdrop-blur-xl transition-all hover:scale-[98%]"
+                  class="apearanimationobserver relative flex h-full cursor-pointer flex-col justify-between overflow-hidden rounded-3xl border border-white/20 bg-[#8080804d] pt-8 text-white backdrop-blur-xl transition-all hover:scale-[98%]"
                 >
                   <div class="pl-4 pt-5">
                     <h3 class="w-2/3 pb-3 text-xl xl:text-[30px]">
@@ -305,7 +323,7 @@
             <div class="md:w-2/3">
               <div class="h-full p-3">
                 <div
-                  class="h-full cursor-pointer items-center overflow-hidden rounded-3xl border border-white/20 bg-[#8080804d] text-white backdrop-blur-xl transition-all hover:scale-[98%]"
+                  class="apearanimationobserver h-full cursor-pointer items-center overflow-hidden rounded-3xl border border-white/20 bg-[#8080804d] text-white backdrop-blur-xl transition-all hover:scale-[98%]"
                 >
                   <img
                     src="static/img/home_v1/sec_2_pic_5.png"
@@ -327,7 +345,9 @@
       </div>
     </section>
     <section>
-      <div class="mx-auto w-11/12 pt-16 text-center md:w-1/2 xl:w-1/3">
+      <div
+        class="apearanimationobserver mx-auto w-11/12 pt-16 text-center md:w-1/2 xl:w-1/3"
+      >
         <h2>Take your productivity to the next level</h2>
         <p class="">
           Lorem ipsum dolor sit amet consectetur. At molestie amet nunc
@@ -337,7 +357,7 @@
       <div class="mx-auto max-w-7xl py-32">
         <div class="flex flex-col md:flex-row">
           <div
-            class="slide relative m-2 h-[25rem] overflow-hidden pb-20 transition-all duration-500 md:h-[40rem] md:w-[65%] md:pb-28"
+            class="slide apearanimationobserver relative m-2 h-[25rem] overflow-hidden pb-20 transition-all duration-500 md:h-[40rem] md:w-[65%] md:pb-28"
           >
             <div class="relative w-full md:h-full">
               <div
@@ -361,7 +381,7 @@
             </div>
           </div>
           <div
-            class="slide relative m-2 h-[5rem] overflow-hidden pb-20 transition-all duration-500 md:h-[40rem] md:w-[15%] md:pb-28"
+            class="slide apearanimationobserver relative m-2 h-[5rem] overflow-hidden pb-20 transition-all duration-500 md:h-[40rem] md:w-[15%] md:pb-28"
           >
             <div class="relative w-full md:h-full">
               <div
@@ -385,7 +405,7 @@
             </div>
           </div>
           <div
-            class="slide relative m-2 h-[5rem] overflow-hidden pb-20 transition-all duration-500 md:h-[40rem] md:w-[15%] md:pb-28"
+            class="slide apearanimationobserver relative m-2 h-[5rem] overflow-hidden pb-20 transition-all duration-500 md:h-[40rem] md:w-[15%] md:pb-28"
           >
             <div class="relative w-full md:h-full">
               <div
@@ -427,9 +447,11 @@
             Array.from(slides).forEach((slide, index) => {
               if (index === clicked_id) {
                 slide.style.width = "65%";
+                slide.style.setProperty("--scalepercent", "100%");
                 return;
               }
               slide.style.width = "15%";
+              slide.style.setProperty("--scalepercent", "97%");
             });
             Array.from(slide_texts).forEach((slide_text, index) => {
               if (index === clicked_id) {
@@ -451,9 +473,11 @@
             Array.from(slides).forEach((slide, index) => {
               if (index === clicked_id) {
                 slide.style.height = "25rem";
+                slide.style.setProperty("--scalepercent", "100%");
                 return;
               }
               slide.style.height = "5rem";
+              slide.style.setProperty("--scalepercent", "97%");
             });
             Array.from(slide_texts).forEach((slide_text, index) => {
               if (index === clicked_id) {
@@ -471,7 +495,9 @@
     <section>
       <div>
         <div class="bg-[url('static/img/home_v1/sec_4_bg.jpg')] bg-cover">
-          <div class="mx-auto w-11/12 max-w-6xl py-20 xl:px-20">
+          <div
+            class="apearanimationobserver mx-auto w-11/12 max-w-6xl py-20 xl:px-20"
+          >
             <div>
               <img
                 src="static/img/home_v1/sec_4_pic.png "
@@ -501,7 +527,7 @@
     </section>
     <section class="bg-black py-10" id="jiggle_container">
       <div
-        class="mx-auto w-11/12 py-16 pb-28 text-center text-white md:w-1/2 xl:w-1/3"
+        class="apearanimationobserver mx-auto w-11/12 py-16 pb-28 text-center text-white md:w-1/2 xl:w-1/3"
       >
         <h2>Take your productivity to the next level</h2>
         <p class="text-white">
@@ -519,7 +545,7 @@
           class="absolute z-10 size-full border bg-black/20"
           id="jiggle_container"
         ></div> -->
-        <div class="relative mx-auto w-9/12 max-w-4xl">
+        <div class="apearanimationobserver relative mx-auto w-9/12 max-w-4xl">
           <img
             id="hover_pic_1"
             alt=""
@@ -569,6 +595,21 @@
             "translateY(0px) translateX(0px) rotateZ(0deg)";
           hover_pic_4.style.transform =
             "translateY(0px) translateX(0px) rotateZ(0deg)";
+        });
+      </script>
+      <script type="text/javascript">
+        var apearanimations = document.getElementsByClassName(
+          "apearanimationobserver",
+        );
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add("apearanimation");
+            }
+          });
+        });
+        Array.from(apearanimations).forEach((apearanimation) => {
+          observer.observe(apearanimation);
         });
       </script>
     </section>
