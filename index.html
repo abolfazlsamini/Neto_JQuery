@@ -371,8 +371,7 @@
         <div class="mx-auto max-w-5xl px-5 pb-10 text-white">
           <div
             id="pic1"
-            class="relative z-[4] my-4 overflow-hidden rounded-xl bg-[#8080804d] backdrop-blur-xl transition-all"
-            style="transform: translateY(-1%)"
+            class="relative z-[4] my-7 overflow-hidden rounded-3xl bg-[#8080804d] backdrop-blur-xl transition-all"
           >
             <div class="md:flex md:items-center">
               <div class="p-10 md:w-1/3">
@@ -390,8 +389,7 @@
           </div>
           <div
             id="pic2"
-            class="relative z-[3] my-4 overflow-hidden rounded-xl bg-[#8080804d] backdrop-blur-xl transition-all"
-            style="transform: translateY(-1%)"
+            class="relative z-[3] my-7 overflow-hidden rounded-3xl bg-[#8080804d] backdrop-blur-xl transition-all"
           >
             <div class="md:flex md:items-center">
               <div class="p-10 md:w-1/3">
@@ -408,8 +406,7 @@
           </div>
           <div
             id="pic3"
-            class="relative z-[2] my-4 overflow-hidden rounded-xl bg-[#8080804d] backdrop-blur-xl transition-all"
-            style="transform: translateY(-1%)"
+            class="relative z-[2] my-7 overflow-hidden rounded-3xl bg-[#8080804d] backdrop-blur-xl transition-all"
           >
             <div class="md:flex md:items-center">
               <div class="p-10 md:w-1/3">
@@ -424,8 +421,7 @@
           </div>
           <div
             id="pic4"
-            class="relative z-[1] my-4 overflow-hidden rounded-xl bg-[#8080804d] backdrop-blur-xl transition-all"
-            style="transform: translateY(-1%)"
+            class="relative z-[1] my-7 overflow-hidden rounded-3xl bg-[#8080804d] backdrop-blur-xl transition-all"
           >
             <div class="md:flex md:items-center">
               <div class="p-10 md:w-1/3">
@@ -460,7 +456,7 @@
             var botom = pic_container.getBoundingClientRect().top;
             var pic_container_height = pic_container.clientHeight;
 
-            var percent = (-430 * botom) / pic_container_height - 80;
+            var percent = (-500 * botom) / pic_container_height - 80;
             if (percent < -98) {
               percent = -98;
             }
@@ -472,7 +468,7 @@
             }
             pic2.style.transform = "translateY(" + percent + "%)";
 
-            var percent_3 = (-430 * botom) / pic_container_height - 180;
+            var percent_3 = (-500 * botom) / pic_container_height - 180;
             if (percent_3 < -200) {
               percent_3 = -200;
             }
@@ -484,7 +480,7 @@
             }
             pic3.style.transform = "translateY(" + percent_3 + "%)";
 
-            var percent_4 = (-430 * botom) / pic_container_height - 287;
+            var percent_4 = (-500 * botom) / pic_container_height - 280;
             if (percent_4 < -310) {
               percent_4 = -310;
             }
