@@ -10,7 +10,13 @@
           font-family: "Objectivity_Regular";
           font-weight: normal;
           font-style: normal;
-          src: url("../static/font/home_v2/Objectivity_Regular.woff2");
+          src: url("../static/font/home_v1/Objectivity_Regular.woff2");
+        }
+        @font-face {
+          font-family: "abcgintonord_extrabold";
+          font-weight: normal;
+          font-style: normal;
+          src: url("../static/font/home_v1/abcgintonord_extrabold.woff2");
         }
         /* * {
           outline: 1px red solid;
@@ -156,6 +162,45 @@
             opacity: 0;
           }
         }
+        .font-abcgintonord_extrabold {
+          font-family: "abcgintonord_extrabold";
+        }
+        .video_bg {
+          background-image: url(static/img/home_v1/video_main_bg.png);
+          background-size: cover;
+        }
+        @media (min-width: 768px) {
+          .carouselActive {
+            scale: 108%;
+          }
+          .carouselNotActive {
+            scale: 95%;
+          }
+        }
+        @media (max-width: 767.95px) {
+          .carouselNotActive {
+            scale: 100%;
+          }
+          .carouselActive {
+            scale: 100%;
+          }
+        }
+        .custom-paging button {
+          border-radius: 100%;
+          width: 20px;
+          background: transparent !important;
+          border: solid 1px black !important;
+        }
+
+        .custom-paging .slick-active button {
+          border-radius: 100%;
+          width: 20px;
+          border: solid 1px black;
+          background: #8e8e8e !important;
+        }
+        .slick-dots li button:before {
+          display: none;
+        }
       }
     </style>
     <script src="static/lib/jquery-3.7.1.js"></script>
@@ -228,10 +273,10 @@
     <section class="bg-black py-10">
       <div class="mx-auto max-w-7xl">
         <div class="apearanimationobserver px-5 py-6 md:flex">
-          <h2 class="pb-5 pr-5 text-white md:w-2/3">
+          <h2 class="pb-5 pr-5 text-center text-white">
             Neto's roadmap includes several gaming, NFT, and Metaverse projects
           </h2>
-          <div class="flex flex-col justify-center pb-10 sm:flex-row">
+          <!-- <div class="flex flex-col justify-center pb-10 sm:flex-row">
             <button
               class="my-auto w-max rounded-3xl bg-white px-6 py-2 text-lg font-bold text-black transition-all hover:scale-95"
             >
@@ -243,7 +288,7 @@
               Learn More
               <div class="transition-all">&nbsp;></div>
             </button>
-          </div>
+          </div> -->
         </div>
         <div>
           <div class="justify-stretch md:flex">
@@ -307,7 +352,7 @@
                   class="apearanimationobserver relative flex h-full cursor-pointer flex-col justify-between overflow-hidden rounded-3xl border border-white/20 bg-[#8080804d] pt-8 text-white backdrop-blur-xl transition-all hover:scale-[98%]"
                 >
                   <div class="pl-4 pt-5">
-                    <h3 class="w-2/3 pb-3 text-xl xl:text-[30px]">
+                    <h3 class="w-2/3 pb-3 text-2xl leading-8 xl:text-[30px]">
                       Neto's first gaming project is the Netoball game
                     </h3>
                     <p class="pt-3 text-[#bababa]">
@@ -351,7 +396,7 @@
         </div>
       </div>
     </section>
-    <section>
+    <!-- <section>
       <div
         class="apearanimationobserver mx-auto w-11/12 pt-16 text-center md:w-2/3 xl:w-1/2"
       >
@@ -385,7 +430,7 @@
                 src="static/img/home_v1/sec_3_pic_1.png"
               />
             </div>
-            <!-- <div
+             <div
               class="slide_text opacity-1 pl-2 pt-5 text-black transition-all duration-200"
             >
               <h3>business</h3>
@@ -393,7 +438,7 @@
                 Lorem ipsum dolor sit amet consectetur. At molestie amet nunc
                 elementum nisl sem eu etiam cras.
               </p>
-            </div> -->
+            </div>
           </div>
           <div
             class="slide apearanimationobserver relative m-2 h-[5rem] overflow-hidden rounded-xl pb-20 transition-all duration-500 md:h-[40rem] md:w-[15%]"
@@ -409,7 +454,7 @@
                 src="static/img/home_v1/sec_3_pic_2.png"
               />
             </div>
-            <!-- <div
+            <div
               class="slide_text pl-2 pt-5 text-black opacity-0 transition-all duration-200"
             >
               <h3>business</h3>
@@ -417,7 +462,7 @@
                 Lorem ipsum dolor sit amet consectetur. At molestie amet nunc
                 elementum nisl sem eu etiam cras.
               </p>
-            </div> -->
+            </div>
           </div>
           <div
             class="slide apearanimationobserver relative m-2 h-[5rem] overflow-hidden rounded-xl pb-20 transition-all duration-500 md:h-[40rem] md:w-[15%]"
@@ -433,7 +478,7 @@
                 src="static/img/home_v1/sec_3_pic_3.png"
               />
             </div>
-            <!-- <div
+            <div
               class="slide_text pl-2 pt-5 text-black opacity-0 transition-all duration-200"
             >
               <h3>business</h3>
@@ -441,14 +486,14 @@
                 Lorem ipsum dolor sit amet consectetur. At molestie amet nunc
                 elementum nisl sem eu etiam cras.
               </p>
-            </div> -->
+            </div>
           </div>
         </div>
       </div>
       <script>
-        var slides = document.getElementsByClassName("slide");
-        var slide_overlays = document.getElementsByClassName("slide_overlay");
-        var slide_texts = document.getElementsByClassName("slide_text");
+        var slides = document.getElementsByclass("slide");
+        var slide_overlays = document.getElementsByclass("slide_overlay");
+        var slide_texts = document.getElementsByclass("slide_text");
         var windows_width = window.innerWidth;
         function onClick(clicked_id) {
           if (windows_width > 768) {
@@ -506,6 +551,379 @@
           }
         }
       </script>
+    </section> -->
+    <section>
+      <div>
+        <div class="bg-[url('static/img/home_v1/sec_4_bg.jpg')] bg-cover">
+          <div
+            class="apearanimationobserver mx-auto w-11/12 max-w-6xl py-20 xl:px-20"
+          >
+            <div>
+              <img
+                src="static/img/home_v1/sec_4_pic.png "
+                class="rounded-3xl backdrop-blur-2xl"
+              />
+            </div>
+            <div
+              class="my-5 rounded-2xl bg-[#8080804d] p-10 py-10 text-center text-white backdrop-blur-lg md:py-32 xl:py-20"
+            >
+              <h2>Neto's first gaming project is the Netoball game</h2>
+              <p class="pt-10 text-white">
+                Neto's income from this game includes in-game ads, in-app
+                purchases, premium version sales, game bundles, hosting online
+                events, and leagues, as well as user payments for buying and
+                selling items in the game's store
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="video_bg py-10">
+        <div class="px-8 pt-32 md:px-16">
+          <div class="relative mx-auto w-fit">
+            <img
+              alt=""
+              src="static/img/home_v1/video_header_1.gif"
+              class="absolute right-10 top-0 w-32 -translate-y-[96%] md:w-40"
+            />
+            <div
+              class="relative z-20 max-w-7xl rounded-[40px] border-4 border-white/40 bg-[linear-gradient(135deg,#fff6,#ffffff12)] p-2"
+            >
+              <div class="flex flex-col items-center md:flex-row-reverse">
+                <div class="p-8 md:w-[40%]">
+                  <div
+                    class="font-abcgintonord_extrabold text-3xl uppercase text-white xl:text-5xl"
+                  >
+                    Designed to Rule
+                  </div>
+                  <div
+                    class="font-ElectronicArtsText_Regular py-4 pb-6 text-xl text-white xl:text-2xl"
+                  >
+                    Today, the Neto token, utilizing an innovative and unique
+                    algorithm, has succeeded in surpassing its major competitors
+                    in the highly competitive cryptocurrency market and has
+                    become one of the top tokens
+                  </div>
+                  <a
+                    href="#"
+                    class="my-6 cursor-pointer rounded-2xl bg-white px-3 py-2 text-sm font-bold text-black outline-none outline-2 delay-75 hover:bg-gray-200 hover:outline-offset-2 hover:outline-white"
+                  >
+                    Visit Website
+                  </a>
+                </div>
+                <div class="p-2 md:w-[60%]">
+                  <video
+                    loop
+                    muted
+                    autoplay
+                    src="static/img/home_v1/video_sec2_1.mp4"
+                    class="rounded-[40px]"
+                  ></video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="px-8 pt-32 md:px-16">
+          <div class="relative mx-auto w-fit">
+            <div
+              class="relative z-20 max-w-7xl rounded-[40px] border-4 border-white/40 bg-[linear-gradient(135deg,#fff6,#ffffff12)] p-2"
+            >
+              <div class="flex flex-col items-center md:flex-row">
+                <div class="p-8 md:w-[40%]">
+                  <div
+                    class="font-abcgintonord_extrabold text-3xl uppercase text-white xl:text-5xl"
+                  >
+                    Become a Partner of NetoGame
+                  </div>
+                  <div
+                    class="font-ElectronicArtsText_Regular py-4 pb-6 text-xl text-white xl:text-2xl"
+                  >
+                    Additionally, Neto has also begun activities in producing
+                    accessories and products related to the company, each of
+                    which has the potential to create significant wealth for
+                    Neto's shareholders
+                  </div>
+                  <a
+                    href="#"
+                    class="my-6 cursor-pointer rounded-2xl bg-white px-3 py-2 text-sm font-bold text-black outline-none outline-2 delay-75 hover:bg-gray-200 hover:outline-offset-2 hover:outline-white"
+                  >
+                    Visit Website
+                  </a>
+                </div>
+                <div class="p-2 md:w-[60%]">
+                  <video
+                    loop
+                    muted
+                    autoplay
+                    src="static/img/home_v1/video_sec2_2.mp4"
+                    class="rounded-[40px]"
+                  ></video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="px-8 pt-32 md:px-16">
+          <div class="relative mx-auto w-fit">
+            <img
+              alt=""
+              src="static/img/home_v1/video_header_2.webp"
+              class="absolute right-0 top-0 z-20 w-40 -translate-y-[45%] translate-x-[18%] md:w-60 xl:w-64"
+            />
+            <div
+              class="relative max-w-7xl rounded-[40px] border-4 border-white/40 bg-[linear-gradient(135deg,#fff6,#ffffff12)] p-2"
+            >
+              <div class="flex flex-col items-center md:flex-row-reverse">
+                <div class="p-8 md:w-[40%]">
+                  <div
+                    class="font-abcgintonord_extrabold text-3xl uppercase text-white xl:text-5xl"
+                  >
+                    Our Affiliate Program
+                  </div>
+                  <div
+                    class="font-ElectronicArtsText_Regular py-4 pb-6 text-xl text-white xl:text-2xl"
+                  >
+                    You can join the Neto family with a free initial
+                    registration. If you are among the first 10,000 registrants,
+                    you will receive 1,000 Neto tokens as a gift, which you can
+                    sell at any time
+                  </div>
+                  <a
+                    href="#"
+                    class="my-6 cursor-pointer rounded-2xl bg-white px-3 py-2 text-sm font-bold text-black outline-none outline-2 delay-75 hover:bg-gray-200 hover:outline-offset-2 hover:outline-white"
+                  >
+                    Visit Website
+                  </a>
+                </div>
+                <div class="p-2 md:w-[60%]">
+                  <video
+                    loop
+                    muted
+                    autoplay
+                    src="static/img/home_v1/video_sec2_3.mp4"
+                    class="rounded-[40px]"
+                  ></video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="px-8 pt-32 md:px-16">
+          <div class="relative mx-auto w-fit">
+            <div
+              class="relative z-20 max-w-7xl rounded-[40px] border-4 border-white/40 bg-[linear-gradient(135deg,#fff6,#ffffff12)] p-2"
+            >
+              <div class="flex flex-col items-center md:flex-row">
+                <div class="p-8 md:w-[40%]">
+                  <div
+                    class="font-abcgintonord_extrabold text-3xl uppercase text-white xl:text-5xl"
+                  >
+                    Become a Partner of NetoGame
+                  </div>
+                  <div
+                    class="font-ElectronicArtsText_Regular py-4 pb-6 text-xl text-white xl:text-2xl"
+                  >
+                    Additionally, Neto has also begun activities in producing
+                    accessories and products related to the company, each of
+                    which has the potential to create significant wealth for
+                    Neto's shareholders
+                  </div>
+                  <a
+                    href="#"
+                    class="my-6 cursor-pointer rounded-2xl bg-white px-3 py-2 text-sm font-bold text-black outline-none outline-2 delay-75 hover:bg-gray-200 hover:outline-offset-2 hover:outline-white"
+                  >
+                    Visit Website
+                  </a>
+                </div>
+                <div class="p-2 md:w-[60%]">
+                  <video
+                    loop
+                    muted
+                    autoplay
+                    src="static/img/home_v1/video_sec2_2.mp4"
+                    class="rounded-[40px]"
+                  ></video>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div>
+        <div class="relative py-10">
+          <div
+            class="absolute bottom-0 h-2/3 w-full bg-[#3761e8] md:h-1/2"
+          ></div>
+          <div class="slider-container mx-auto overflow-hidden">
+            <div class="carousel">
+              <div class="w-full">
+                <div class="h-full cursor-pointer rounded-xl px-3 py-8 md:px-0">
+                  <div>
+                    <image
+                      placeholder="blur"
+                      src="static/img/home_v1/carousel2_pic_1.webp"
+                      alt=""
+                      id="scaleimg1"
+                      class="carouselActive w-full rounded-xl transition-all duration-300 md:scale-90"
+                    />
+                  </div>
+
+                  <div
+                    class="relative px-10 pt-4 text-center transition-opacity duration-500 md:pt-10"
+                  >
+                    <div class="">
+                      <div
+                        class="font-ElectronicArtsDisplay_Bold pb-5 pt-3 text-2xl uppercase text-white sm:text-3xl xl:text-4xl"
+                      >
+                        Hyper Grip Wireless Controller
+                      </div>
+                      <div
+                        class="font-ElectronicArtsText_Regular pb-10 text-lg text-white"
+                      >
+                        For Gamers seeking complete mastery , HyperGrip is only
+                        choice . Your hands deserve the best , choose HyperGrip
+                        !
+                      </div>
+                      <a
+                        href="#"
+                        class="my-6 cursor-pointer rounded-2xl bg-white px-3 py-2 text-sm font-bold text-black outline-none outline-2 delay-75 hover:bg-gray-200 hover:outline-offset-2 hover:outline-white"
+                      >
+                        Visit Website
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-full">
+                <div
+                  class="h-full cursor-pointer rounded-xl px-3 py-8 pb-8 md:px-0"
+                >
+                  <div>
+                    <image
+                      placeholder="blur"
+                      src="static/img/home_v1/carousel2_pic_2.webp"
+                      alt=""
+                      id="scaleimg2"
+                      class="w-full rounded-xl transition-all duration-300 md:scale-90"
+                    />
+                  </div>
+
+                  <div
+                    class="relative px-10 pt-4 text-center transition-opacity duration-500 md:pt-10"
+                  >
+                    <div class="">
+                      <div
+                        class="font-ElectronicArtsDisplay_Bold pb-5 pt-3 text-2xl uppercase text-white sm:text-3xl xl:text-4xl"
+                      >
+                        Neto Gear Console
+                      </div>
+                      <div
+                        class="font-ElectronicArtsText_Regular pb-10 text-lg text-white"
+                      >
+                        Experience the next generation of handheld consoles
+                      </div>
+                      <a
+                        href="#"
+                        class="my-6 cursor-pointer rounded-2xl bg-white px-3 py-2 text-sm font-bold text-black outline-none outline-2 delay-75 hover:bg-gray-200 hover:outline-offset-2 hover:outline-white"
+                      >
+                        Visit Website
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-full">
+                <div
+                  class="h-full cursor-pointer rounded-xl px-3 py-8 pb-8 md:px-0"
+                >
+                  <div>
+                    <image
+                      placeholder="blur"
+                      src="static/img/home_v1/carousel2_pic_3.webp"
+                      alt=""
+                      id="scaleimg3"
+                      class="w-full rounded-xl transition-all duration-300 md:scale-90"
+                    />
+                  </div>
+
+                  <div
+                    class="relative px-10 pt-4 text-center transition-opacity duration-500 md:pt-10"
+                  >
+                    <div class="">
+                      <div
+                        class="font-ElectronicArtsDisplay_Bold pb-5 pt-3 text-2xl uppercase text-white sm:text-3xl xl:text-4xl"
+                      >
+                        SkyTune Wireless Earbuds
+                      </div>
+                      <div
+                        class="font-ElectronicArtsText_Regular pb-10 text-lg text-white"
+                      >
+                        Experience the harmony of SkyTune , where every note
+                        meets the sky
+                      </div>
+                      <a
+                        href="#"
+                        class="my-6 cursor-pointer rounded-2xl bg-white px-3 py-2 text-sm font-bold text-black outline-none outline-2 delay-75 hover:bg-gray-200 hover:outline-offset-2 hover:outline-white"
+                      >
+                        Visit Website
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="w-full">
+                <div
+                  class="h-full cursor-pointer rounded-xl px-3 py-8 pb-8 md:px-0"
+                >
+                  <div>
+                    <image
+                      placeholder="blur"
+                      src="static/img/home_v1/carousel2_pic_4.webp"
+                      alt=""
+                      id="scaleimg4"
+                      class="w-full rounded-xl transition-all duration-300 md:scale-90"
+                    />
+                  </div>
+
+                  <div
+                    class="relative px-10 pt-4 text-center transition-opacity duration-500 md:pt-10"
+                  >
+                    <div class="">
+                      <div
+                        class="font-ElectronicArtsDisplay_Bold pb-5 pt-3 text-2xl uppercase text-white sm:text-3xl xl:text-4xl"
+                      >
+                        NETO VR
+                      </div>
+                      <div
+                        class="font-ElectronicArtsText_Regular pb-10 text-lg text-white"
+                      >
+                        Immerse yourself in the future of virtual reality with
+                        Neto VR , where limitless possibilities await your
+                        exploration
+                      </div>
+                      <a
+                        href="#"
+                        class="my-6 cursor-pointer rounded-2xl bg-white px-3 py-2 text-sm font-bold text-black outline-none outline-2 delay-75 hover:bg-gray-200 hover:outline-offset-2 hover:outline-white"
+                      >
+                        Visit Website
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div
+              class="custom-paging absolute bottom-12 w-full text-center"
+            ></div>
+          </div>
+        </div>
+      </div>
     </section>
     <section>
       <div>
@@ -520,7 +938,7 @@
               />
             </div>
             <div
-              class="my-5 rounded-2xl bg-[#8080804d] p-10 text-center text-white backdrop-blur-lg xl:py-20"
+              class="my-5 rounded-2xl bg-[#8080804d] p-10 py-10 text-center text-white backdrop-blur-lg md:py-20 xl:py-20"
             >
               <h2>Take your life to the next level with Neto Game</h2>
               <p class="pt-5 text-white">
@@ -533,11 +951,6 @@
                 without creating new tokens, which helps to boost the token's
                 value. The remaining 40% covers the company's project costs
               </p>
-              <button
-                class="my-auto mt-5 rounded-3xl bg-white px-6 py-2 text-lg font-bold text-black transition-all hover:scale-95"
-              >
-                Connect Wallet
-              </button>
             </div>
           </div>
         </div>
@@ -636,5 +1049,115 @@
         });
       </script>
     </section>
+    <script type="text/javascript" src="static/lib/slick/slick.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        var currentSlideNumber = 0;
+        $(".carousel").slick({
+          class: "center",
+          infinite: false,
+          prevArrow: `<button
+              type="button"
+              class="slick-prev absolute z-20 bg-black bottom-10 left-[18%] z-10 hidden size-9 cursor-pointer rounded-full border p-1 lg:block"
+            >
+              Previous
+            </button>`,
+          nextArrow: `<button
+              type="button"
+              class="slick-next absolute z-20 bg-black bottom-10 right-[18%] z-10 hidden size-9 rounded-full border p-1 opacity-35 lg:block"
+            >
+              Next
+            </button>`,
+          centerPadding: "350px",
+          class: "center",
+          centerMode: true,
+          slidesToShow: 1,
+          speed: 400,
+          dots: true,
+          slidesToScroll: 1,
+          arrows: false,
+          beforeChange: (event, slick, currentSlide, nextSlide) => {
+            currentSlideNumber = nextSlide;
+            console.log(currentSlideNumber);
+          },
+          appendDots: $(".custom-paging"),
+          customPaging: function (slick, index) {
+            // Customize the paging element here
+            return '<button type="button">' + "</button>";
+          },
+          // customPaging: (i) => {
+          //   if (i === currentSlideNumber)
+          //     return (
+          //       <div class="size-3 rounded-full border bg-white hover:opacity-85"></div>
+          //     );
+          //   return (
+          //     <div class="size-3 rounded-full border hover:bg-slate-400 hover:opacity-85"></div>
+          //   );
+          // },
+          // mobileFirst: true,
+          responsive: [
+            {
+              breakpoint: 640,
+              settings: {
+                centerPadding: "20px",
+              },
+            },
+            {
+              breakpoint: 768,
+              settings: {
+                centerPadding: "50px",
+              },
+            },
+            {
+              breakpoint: 1024,
+              settings: {
+                centerPadding: "80px",
+              },
+            },
+            {
+              breakpoint: 1440,
+              settings: {
+                centerPadding: "200px",
+              },
+            },
+            {
+              breakpoint: 1750,
+              settings: {
+                centerPadding: "250px",
+              },
+            },
+            {
+              breakpoint: 1920,
+              settings: {
+                centerPadding: "400px",
+              },
+            },
+            {
+              breakpoint: 4034,
+              settings: {
+                centerPadding: "500px",
+              },
+            },
+          ],
+        });
+      });
+      $(".carousel").on(
+        "beforeChange",
+        function (event, slick, currentSlide, nextSlide) {
+          currentSlideNumber = nextSlide;
+          console.log(nextSlide);
+
+          for (var i = 1; i < 5; i++) {
+            if (currentSlideNumber + 1 === i) {
+              $(`#scaleimg${i}`).addClass("carouselActive");
+              $(`#scaleimg${i}`).removeClass("carouselNotActive");
+            } else {
+              $(`#scaleimg${i}`).removeClass("carouselActive");
+              $(`#scaleimg${i}`).addClass("carouselNotActive");
+            }
+          }
+        },
+      );
+    </script>
   </body>
 </html>
